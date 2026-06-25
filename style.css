@@ -1,0 +1,1367 @@
+/* style.css - Restored for Gilgit Craft Corner */
+:root {
+  --clr-primary: #079c52;
+  --clr-primary-dark: #1e293b;
+  --clr-accent: #D97706;
+  --clr-accent-lt: #F59E0B;
+  --clr-text: #1e293b;
+  --clr-text-muted: #64748b;
+  --clr-bg: #F8FAFC;
+  --clr-white: #ffffff;
+  
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Cabin', sans-serif;
+  --font-display: 'Amatic SC', cursive;
+  
+  --transition: all 0.3s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); color: var(--clr-text); background: var(--clr-bg); line-height: 1.6; }
+
+h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--clr-primary-dark); }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; }
+.hidden, [hidden] { display: none !important; }
+
+/* Promo */
+.promo-bar { background: var(--clr-primary-dark); color: #fff; text-align: center; padding: 8px; font-size: 0.9rem; }
+.promo-bar a { color: var(--clr-accent-lt); font-weight: 600; }
+
+/* Navbar */
+/* Navbar Master Wrapper */
+.navbar { 
+  position: sticky; 
+  top: 0; 
+  background: var(--clr-white); 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+  z-index: 1000; 
+  padding: 10px 0; 
+}
+
+.navbar__inner { 
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center; 
+  max-width: 100%; 
+  margin: 0; 
+  padding: 0 40px 0 0; 
+}
+
+.navbar__brand { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  font-family: var(--font-serif); 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  color: var(--clr-primary); 
+  padding-left: 20px; 
+  margin-right: auto; 
+}
+
+.navbar__brand span span { 
+  color: var(--clr-accent); 
+}
+
+/* Updated: Increased max-width from 400px to 600px and added slight padding inside 
+   the field layout to give the larger bar a more substantial presence */
+.navbar__search-wrap { 
+  flex: 1; 
+  max-width: 600px; /* Expands the visual width of the search element */
+  margin: 0 40px 0 120px; 
+  position: relative; 
+}
+
+/* Updated: Increased vertical padding slightly to balance out the new wider design */
+.search-box { 
+  display: flex; 
+  align-items: center; 
+  background: #f1f5f9; 
+  border-radius: 20px; 
+  padding: 10px 20px; /* More padding for a bigger, cleaner touch target */
+}
+
+.search-box__icon { 
+  color: var(--clr-text-muted); 
+  margin-right: 12px; 
+}
+
+.search-box__input { 
+  border: none; 
+  background: transparent; 
+  width: 100%; 
+  outline: none; 
+  font-size: 1rem; /* Slightly larger text for the expanded input box */
+}
+
+/* Navbar Action Containers */
+.navbar__actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 30px; 
+}
+
+.navbar__nav { 
+  display: flex; 
+  gap: 25px; 
+  align-items: center; 
+}
+
+.navbar__link { 
+  font-weight: 500; 
+  transition: var(--transition); 
+}
+
+.navbar__link:hover { 
+  color: var(--clr-accent); 
+}
+
+.navbar__cta { 
+  background: #25D366; 
+  color: #fff; 
+  padding: 8px 15px; 
+  border-radius: 20px; 
+  font-weight: 600; 
+}
+
+/* Shopping Cart Mini-Trigger Utilities */
+.cart-trigger { 
+  background: none; 
+  border: none; 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+}
+
+.cart-trigger__badge { 
+  position: absolute; 
+  top: -5px; 
+  right: -8px; 
+  background: var(--clr-accent); 
+  color: #fff; 
+  font-size: 0.75rem; 
+  width: 18px; height: 18px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+/* Responsive Mobile Toggle Hardware Styles */
+.navbar__hamburger { 
+  display: none; 
+  background: none; 
+  border: none; 
+  flex-direction: column; 
+  gap: 5px; 
+}
+
+.navbar__hamburger span { 
+  width: 25px; 
+  height: 3px; 
+  background: var(--clr-primary); 
+  transition: 0.3s; 
+}
+
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 6px; font-weight: 600; transition: var(--transition); border: 2px solid transparent; }
+.btn--primary { background: var(--clr-accent); color: #fff; }
+.btn--primary:hover { background: #b45f06; }
+.btn--outline { border-color: var(--clr-primary); color: var(--clr-primary); }
+.btn--outline:hover { background: var(--clr-primary); color: #fff; }
+.btn--whatsapp { background: #25D366; color: #fff; }
+
+/* ==========================================================================
+   UPDATED HERO SECTION WITH MODERNISED ANIMATIONS & HOVER PHYSICS
+   ========================================================================== */
+
+/* Hero Baseline Setup */
+.hero { 
+  background: var(--clr-primary); 
+  color: #fff; 
+  padding: 80px 20px; /* Slight padding expand for premium breathing space */
+  overflow: hidden; /* Encapsulates structural element entry tracks securely */
+}
+
+.hero__container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex; 
+  align-items: center; 
+  gap: 40px; 
+}
+
+.hero__content { 
+  flex: 1; 
+}
+
+/* 
+   1. ANIMATED TEXT COMPONENT ENTRANCE TIMELINES
+   Utilizes fluid keyframes with staggered cubic-bezier curves for a premium editorial entry reveal
+*/
+.hero__badge { 
+  color: var(--clr-accent-lt); 
+  font-weight: 600; 
+  letter-spacing: 2px; /* Slight expand for enhanced high-end tracking text feel */
+  text-transform: uppercase; 
+  font-size: 0.85rem; 
+  
+  /* Entry Animation */
+  opacity: 0;
+  animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero__title { 
+  font-size: 3.5rem; 
+  line-height: 1.1; 
+  margin: 15px 0; 
+  color: #fff; 
+  letter-spacing: -0.02em;
+  
+  /* Entry Animation - Staggered slightly behind badge */
+  opacity: 0;
+  animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.hero__title span { 
+  color: var(--clr-accent-lt); 
+}
+
+.hero__subtitle { 
+  font-size: 1.1rem; 
+  margin-bottom: 30px; 
+  opacity: 0.9; 
+  max-width: 500px; 
+  
+  /* Entry Animation - Staggered slightly behind title */
+  opacity: 0;
+  animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.hero__actions { 
+  display: flex; 
+  gap: 15px; 
+  
+  /* Entry Animation - Staggered slightly behind subtitle */
+  opacity: 0;
+  animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+/* Action Button Micro-interactions (Ensuring links float smoothly up when active) */
+.hero__actions .btn {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero__actions .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+   2. VISUAL PANEL CARD FLOATING PHYSICS
+   Adds an ambient cinematic soft vertical float loop to mimic depth layering, 
+   plus entry tracks coming up from beneath
+*/
+.hero__visual { 
+  flex: 1; 
+  text-align: right; 
+  
+  /* Entry Animation - Smooth vertical emergence lift from below */
+  opacity: 0;
+  animation: heroVisualReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.hero__featured-card { 
+  position: relative; 
+  display: inline-block; 
+  border-radius: 12px; 
+  overflow: hidden; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25); 
+  background-color: rgba(255, 255, 255, 0.03);
+  
+  /* Infinite Physics Loop - Combined subtle natural vertical float movement */
+  animation: ambientFloat 6s ease-in-out infinite alternate;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scale enhancement over card element when mouse passes focus */
+.hero__featured-card:hover {
+  transform: scale(1.02) translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  /* Pauses ambient float animation cycles clean when user manually interacts */
+  animation-play-state: paused; 
+}
+
+.hero__featured-img { 
+  width: 100%; 
+  max-width: 400px; 
+  height: auto; 
+  display: block; 
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro-lens magnification effect over the picture asset itself */
+.hero__featured-card:hover .hero__featured-img {
+  transform: scale(1.04);
+}
+
+.hero__featured-badge { 
+  position: absolute; 
+  bottom: 20px; 
+  left: 20px; 
+  background: rgba(0,0,0,0.75); 
+  backdrop-filter: blur(4px); /* Modern subtle glassmorphism finish look */
+  -webkit-backdrop-filter: blur(4px);
+  color: #fff; 
+  padding: 6px 16px; 
+  border-radius: 20px; 
+  font-size: 0.85rem; 
+  z-index: 2;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero__featured-card:hover .hero__featured-badge {
+  background-color: var(--clr-primary); /* Swaps banner focus smoothly on card action */
+  transform: scale(1.03);
+}
+
+
+/* ==========================================================================
+   ANIMATION TIMELINE DEFINITIONS (KEYFRAMES)
+   ========================================================================== */
+
+/* Text Structural Entry Curves */
+@keyframes heroTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Visual Image Element Structural Entry Curve */
+@keyframes heroVisualReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ambient Loop Floating Simulation Track */
+@keyframes ambientFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-12px); /* Gentle organic rising elevation shift */
+  }
+}
+
+/* Accessibility Modifiers System Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  .hero__badge, .hero__title, .hero__subtitle, .hero__actions, .hero__visual {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero__featured-card {
+    animation: none !important;
+  }
+}
+
+/* Stats & Trust */
+.stats { background: #fff; padding: 40px 20px; border-bottom: 1px solid #e2e8f0; }
+.stats__container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; text-align: center; }
+.stats__number { font-size: 2.5rem; font-family: var(--font-serif); color: var(--clr-primary); font-weight: 700; }
+.stats__plus { font-size: 2rem; color: var(--clr-accent); }
+.stats__label { color: var(--clr-text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; }
+
+.trust-bar { background: var(--clr-bg); padding: 15px 0; overflow: hidden; border-bottom: 1px solid #e2e8f0; }
+.trust-bar__track { display: flex; width: 200%; animation: marquee 20s linear infinite; }
+.trust-bar__content { display: flex; justify-content: space-around; width: 50%; }
+.trust-bar__item { font-weight: 600; color: var(--clr-text-muted); }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Section Defaults */
+.section-header { text-align: center; margin-bottom: 40px; }
+.section-tag { color: var(--clr-accent); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+.section-title { font-size: 2.5rem; margin: 10px 0; }
+.section-desc { color: var(--clr-text-muted); max-width: 600px; margin: 0 auto; }
+
+/* Categories */
+.categories-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.categories-section__container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.category-card { position: relative; border-radius: 12px; overflow: hidden; height: 300px; display: block; }
+.category-card__img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.category-card:hover .category-card__img-wrap img { transform: scale(1.05); }
+.category-card__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: #fff; }
+.category-card__overlay h3 { color: #fff; font-size: 1.5rem; margin-bottom: 5px; }
+
+/* Products Grid */
+.products-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.filter-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+.filter-btn { padding: 8px 20px; border-radius: 20px; border: 1px solid #cbd5e1; background: #fff; color: var(--clr-text); font-weight: 500; transition: var(--transition); }
+.filter-btn.active, .filter-btn:hover { background: var(--clr-primary); color: #fff; border-color: var(--clr-primary); }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+.product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: var(--transition); display: flex; flex-direction: column; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
+.product-card__img { width: 100%; height: 250px; object-fit: cover; }
+.product-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.product-card__category { font-size: 0.8rem; color: var(--clr-accent); text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
+.product-card__title { font-size: 1.2rem; margin-bottom: 10px; color: var(--clr-primary-dark); }
+.product-card__artisan { font-size: 0.9rem; color: var(--clr-text-muted); margin-bottom: 15px; }
+.product-card__price { font-size: 1.25rem; font-weight: 700; color: var(--clr-primary); margin-top: auto; margin-bottom: 15px; }
+.product-card__actions { display: flex; gap: 10px; }
+.product-card__btn { flex: 1; padding: 10px; text-align: center; border-radius: 6px; font-weight: 600; transition: var(--transition); }
+.product-card__btn--add { background: var(--clr-bg); color: var(--clr-primary); border: 1px solid var(--clr-primary); }
+.product-card__btn--add:hover { background: var(--clr-primary); color: #fff; }
+.product-card__btn--wa { background: #25D366; color: #fff; border: none; }
+.product-card__btn--wa:hover { background: #1ebd5a; }
+
+/* About & Traditions */
+.about-section, .traditions-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.about-section__container { display: flex; gap: 50px; align-items: center; }
+.about-section__visual { flex: 1; position: relative; }
+.about-section__frame img { width: 100%; border-radius: 12px; }
+.about-section__badge { position: absolute; bottom: -20px; right: -20px; background: var(--clr-accent); color: #fff; padding: 20px; border-radius: 50%; text-align: center; width: 120px; height: 120px; display: flex; flex-direction: column; justify-content: center; }
+.about-section__badge-num { font-size: 1.8rem; font-weight: 700; }
+.about-section__content { flex: 1; }
+.about-features { margin-top: 30px; display: flex; flex-direction: column; gap: 20px; }
+.about-feature { display: flex; gap: 15px; }
+.about-feature__icon { color: var(--clr-accent); }
+
+.traditions-grid, .process-grid, .testimonials-grid, .guarantees-section__container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.tradition-card, .process-card, .guarantee-card { background: #fff; padding: 40px 30px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+.tradition-card:hover, .process-card:hover, .guarantee-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+.tradition-card__icon, .process-card__icon, .guarantee-card__icon { font-size: 2.5rem; margin: 0 auto 20px; color: var(--clr-primary); background: #f1f5f9; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+
+/* Testimonials */
+.testimonial-card { background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); position: relative; overflow: hidden; }
+.testimonial-card::before { content: '"'; position: absolute; top: 10px; right: 20px; font-size: 6rem; font-family: var(--font-serif); color: var(--clr-accent); opacity: 0.1; line-height: 1; }
+.testimonial-card__stars { color: #FBBF24; margin-bottom: 20px; font-size: 1.2rem; }
+.testimonial-card__text { font-style: italic; font-size: 1.05rem; color: var(--clr-text); line-height: 1.8; margin-bottom: 25px; }
+.testimonial-card__author { display: flex; align-items: center; gap: 15px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
+.testimonial-card__avatar { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; }
+.testimonial-card__name { font-weight: 700; color: var(--clr-primary-dark); display: block; font-style: normal; }
+.testimonial-card__loc { font-size: 0.85rem; color: var(--clr-text-muted); }
+
+/* Custom CTA Section */
+.custom-cta-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.custom-cta-section__container { background: var(--clr-primary); color: #fff; border-radius: 24px; padding: 60px; display: flex; align-items: center; gap: 50px; overflow: hidden; box-shadow: 0 20px 40px rgba(30,58,138,0.2); }
+.custom-cta__content { flex: 1; z-index: 2; }
+.custom-cta__tag { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; display: inline-block; margin-bottom: 15px; }
+.custom-cta__title { font-size: 3rem; color: #fff; margin-bottom: 20px; }
+.custom-cta__desc { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; line-height: 1.8; }
+.custom-cta__actions { display: flex; gap: 15px; }
+.custom-cta__outline { border-color: rgba(255,255,255,0.5); color: #fff; }
+.custom-cta__outline:hover { background: #fff; color: var(--clr-primary); border-color: #fff; }
+.custom-cta__visual { flex: 1; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.custom-cta__visual img { width: 100%; height: auto; display: block; transform: scale(1.05); transition: transform 0.5s ease; }
+.custom-cta-section__container:hover .custom-cta__visual img { transform: scale(1); }
+.faq-section, .contact-section { padding: 80px 20px; max-width: 800px; margin: 0 auto; }
+.faq-item { background: #fff; margin-bottom: 10px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.faq-item__question { padding: 20px; font-weight: 600; cursor: pointer; list-style: none; position: relative; }
+.faq-item__question::-webkit-details-marker { display: none; }
+.faq-item__answer { padding: 0 20px 20px; color: var(--clr-text-muted); }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-info__card { display: flex; gap: 15px; margin-bottom: 25px; }
+.contact-info__icon { color: var(--clr-accent); }
+.contact-wa-btn { display: inline-flex; width: 100%; margin-top: 20px; }
+.contact-map__frame iframe { width: 100%; height: 300px; border: none; border-radius: 12px; }
+
+/* Cart Sidebar */
+.cart-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.6); backdrop-filter: blur(4px); z-index: 1001; opacity: 0; pointer-events: none; transition: 0.4s ease; }
+.cart-overlay.active { opacity: 1; pointer-events: all; }
+.cart-sidebar { position: fixed; top: 0; right: -450px; width: 100%; max-width: 450px; height: 100vh; background: #fff; z-index: 1002; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+.cart-sidebar.active { right: 0; }
+.cart-sidebar__header { display: flex; justify-content: space-between; align-items: center; padding: 25px 30px; border-bottom: 1px solid #f1f5f9; background: #fff; }
+.cart-sidebar__title { font-size: 1.4rem; font-family: var(--font-serif); display: flex; align-items: center; gap: 12px; color: var(--clr-primary-dark); margin: 0; }
+.cart-sidebar__close { background: #f1f5f9; border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); color: var(--clr-text); }
+.cart-sidebar__close:hover { background: #e2e8f0; color: #ef4444; }
+.cart-sidebar__body { flex: 1; overflow-y: auto; padding: 30px; display: flex; flex-direction: column; gap: 20px; background: #fafafa; }
+.cart-sidebar__footer { padding: 30px; border-top: 1px solid #f1f5f9; background: #fff; box-shadow: 0 -10px 20px rgba(0,0,0,0.02); }
+.cart-summary { background: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+.cart-summary__row { display: flex; justify-content: space-between; margin-bottom: 12px; color: var(--clr-text-muted); font-size: 0.95rem; }
+.cart-summary__total { font-weight: 700; font-size: 1.3rem; margin-top: 15px; border-top: 1px dashed #cbd5e1; padding-top: 15px; color: var(--clr-primary-dark); }
+
+/* Cart Items */
+.cart-item { display: flex; gap: 20px; background: #fff; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: var(--transition); }
+.cart-item:hover { border-color: #cbd5e1; box-shadow: 0 6px 12px rgba(0,0,0,0.05); }
+.cart-item__img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
+.cart-item__info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.cart-item__title { font-size: 1rem; font-weight: 600; margin-bottom: 5px; color: var(--clr-primary-dark); }
+.cart-item__price { color: var(--clr-accent); font-weight: 700; font-size: 1.1rem; }
+.cart-item__remove { color: #ef4444; background: none; border: none; font-size: 0.85rem; font-weight: 500; cursor: pointer; margin-top: 8px; text-align: left; display: inline-block; width: max-content; }
+.cart-item__remove:hover { text-decoration: underline; }
+
+/* Animations */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.6s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal-zoom { opacity: 0; transform: scale(0.95); transition: 0.6s ease-out; }
+.reveal-zoom.active { opacity: 1; transform: scale(1); }
+
+/* Responsive Grid Adjustments */
+@media (max-width: 992px) {
+  .categories-section__container { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero__title { font-size: 2.8rem; }
+  .navbar__nav { gap: 15px; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar__nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .navbar__nav.active { display: flex; }
+  .navbar__search-wrap { display: none; }
+  .navbar__hamburger { display: flex; }
+  .hero__container { flex-direction: column; text-align: center; }
+  .hero__visual { display: none; }
+  .categories-section__container { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; }
+  .about-section__container { flex-direction: column; }
+  .custom-cta-section__container { flex-direction: column; padding: 40px 20px; text-align: center; }
+  .custom-cta__actions { justify-content: center; flex-wrap: wrap; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+/* ==========================================================================
+   PRODUCTION CSS FOR THE NEWSLETTER SECTION
+   ========================================================================== */
+
+/* Scoped Layout Resets & Type Foundations */
+.newsletter-section {
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  padding: 4rem 1.5rem 6rem;
+  background-color: #fbfbf9; /* Warm alpine cream canvas backdrop */
+  -webkit-font-smoothing: antialiased;
+}
+
+.newsletter-section *,
+.newsletter-section *::before,
+.newsletter-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.newsletter-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Outer Section Layout Wrapper */
+.newsletter-section__wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Master UI Container block */
+.newsletter-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(30, 58, 52, 0.08);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e6e6e2;
+}
+
+/* 
+   IMAGE CONTAINER SIZE REGULATION:
+   Constrained to a beautifully balanced proportion instead of expanding endlessly
+*/
+.newsletter-card__visual {
+  position: relative;
+  width: 100%;
+  height: 260px; /* Constrains height footprint on narrow mobile screens */
+  background-color: #1e3a34; /* Deep Pine fallback tint */
+  overflow: hidden;
+}
+
+.newsletter-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%; /* Holds scenic depth composition focus */
+}
+
+/* Soft ambient gradient shield mask over media asset */
+.newsletter-card__visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(30, 58, 52, 0.5));
+}
+
+/* Dynamic Numeric Status Tracker Badge Component */
+.newsletter-card__badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: #ffffff;
+  padding: 0.6rem 1.15rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.newsletter-card__badge-num {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #8c6239; /* Rich Walnut Core Tone */
+  line-height: 1.1;
+}
+
+.newsletter-card__badge-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #666666;
+  font-weight: 700;
+  margin-top: 0.15rem;
+}
+
+/* Geometric pattern layer opacity stabilizer */
+.newsletter-card__pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* Registration Form Text Content Panel Side */
+.newsletter-card__body {
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsletter-card__tag {
+  font-size: 0.85rem;
+  color: #8c6239;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-card__title {
+  font-size: 2.25rem;
+  color: #1e3a34;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.newsletter-card__desc {
+  color: #666666;
+  margin-bottom: 1.75rem;
+  font-size: 1.05rem;
+}
+
+/* Interactive Bullet Perks List Components */
+.newsletter-perks {
+  list-style: none;
+  margin-bottom: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.newsletter-perks li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+.newsletter-perks svg {
+  color: #10b981; /* Premium success confirmation green checkmark */
+  flex-shrink: 0;
+}
+
+/* Submission Form Input Box Controls */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.newsletter-form__field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.newsletter-form__icon {
+  position: absolute;
+  left: 1.25rem;
+  color: #777777;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 1.1rem 1rem 1.1rem 3.25rem;
+  border: 1px solid #dcdcd8;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fbfbf9;
+  outline: none;
+  color: #2b2b2b;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.newsletter-input:focus {
+  border-color: #8c6239;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(140, 98, 57, 0.12);
+}
+
+.newsletter-btn {
+  background-color: #1e3a34;
+  color: #ffffff;
+  border: none;
+  padding: 1.1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.newsletter-btn:hover {
+  background-color: #8c6239;
+  box-shadow: 0 6px 16px rgba(140, 98, 57, 0.2);
+}
+
+.newsletter-privacy {
+  font-size: 0.8rem;
+  color: #777777;
+  text-align: center;
+}
+
+/* ==========================================================================
+   SCROLL UTILITIES & ENTRY TRANSITION STATES
+   ========================================================================== */
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-zoom.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-zoom {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+/* ==========================================================================
+   PRODUCTION CSS FOR THE SOCIAL GALLERY SECTION
+   ========================================================================== */
+
+/* Layout Reset & Scoped Foundations */
+.gallery-section {
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  padding: 6rem 1.5rem;
+  background-color: #fbfbf9; /* Warm alpine cream canvas backdrop */
+  -webkit-font-smoothing: antialiased;
+}
+
+.gallery-section *,
+.gallery-section *::before,
+.gallery-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Base Utility Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background-color: #8c6239; /* Rich Walnut Core Tone */
+  color: #ffffff;
+}
+
+.btn--sm {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+}
+
+/* Outer Section Layout Wrapper */
+.gallery-section__container {
+  max-width: 1300px; /* Premium breathing space bounds */
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Asymmetrical Premium Left-Aligned Header Block */
+.gallery-section .section-header {
+  text-align: left;
+  max-width: 800px;
+  margin-bottom: 4.5rem;
+  border-left: 4px solid #8c6239; /* Artisan timber vertical anchor accent */
+  padding-left: 1.5rem;
+}
+
+.gallery-section .section-tag {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em; /* Elegant loose tracking */
+  color: #8c6239;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-section .section-title {
+  font-size: 3rem;
+  color: #1e3a34; /* Deep Alpine Green Focus */
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.gallery-section .section-desc {
+  color: #555555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Gallery Grid Framework */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single card vertical column layout for small viewports */
+  gap: 2rem;
+}
+
+/* Premium Portrait Frame Container Components */
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(30, 58, 52, 0.08);
+  aspect-ratio: 4 / 5; /* Elegant vertical portrait crops instead of basic grids */
+  background-color: #e6e6e2;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Immersive atmospheric dark protective gradient shield */
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30, 58, 52, 0.4) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Hover Zoom Micro-interactions */
+.gallery-item:not(.gallery-item--cta):hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(30, 58, 52, 0.15);
+}
+
+.gallery-item:not(.gallery-item--cta):hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item:not(.gallery-item--cta):hover::after {
+  opacity: 1;
+}
+
+/* Specialized Social Media CTA Callout Grid Element Block */
+.gallery-item--cta {
+  background-color: #1e3a34;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Delicate custom border lining track inside container bounds */
+.gallery-item--cta::before {
+  content: '';
+  position: absolute;
+  inset: 1.25rem;
+  border: 1px dashed rgba(140, 98, 57, 0.4); /* Dashed stitch texture design */
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.gallery-item__cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Polished circular instagram icon backdrop framing layer */
+.gallery-item__cta-inner svg {
+  color: #8c6239;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.75rem;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(140, 98, 57, 0.2);
+}
+
+.gallery-item__cta-inner p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 240px;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.01em;
+}
+
+/* Pill-shaped Social Profile Action Element Link */
+.gallery-item .btn--primary {
+  background-color: #8c6239;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(140, 98, 57, 0.2);
+}
+
+.gallery-item .btn--primary:hover {
+  background-color: #ffffff;
+  color: #1e3a34; /* Elegant inversion swap execution */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   SCROLL UTILITIES & TRANSITION HOOKS
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   ADAPTIVE SYSTEMS RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Intermediate System Configurations (Tablets, 768px viewports onwards) */
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Full Desktop Displays Configuration (Desktop, 1024px viewports onwards) */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; /* Generous micro-space distribution buffers */
+  }
+
+  /* 
+     ELITE ASYMMETRIC STAGGERING MATRIX LAYOUT EFFECT:
+     Breaks uniform lines into organic high-fashion masonry heights
+  */
+  .gallery-grid .gallery-item:nth-child(3n+1) {
+    transform: translateY(20px);
+  }
+  
+  .gallery-grid .gallery-item:nth-child(3n+2) {
+    transform: translateY(-20px);
+  }
+
+  .gallery-grid .gallery-item:nth-child(3n+3) {
+    transform: translateY(0);
+  }
+  
+  /* Synchronizes flawlessly with your active scroll wrapper selector hooks */
+  .gallery-grid .gallery-item.active:nth-child(3n+1) {
+    transform: translateY(20px);
+  }
+  .gallery-grid .gallery-item.active:nth-child(3n+2) {
+    transform: translateY(-20px);
+  }
+}
+
+/* ==========================================================================
+   ADAPTIVE RESPONSIVE FRAMEWORK BREAKPOINTS
+   ========================================================================== */
+
+/* Medium Screens System Configuration (Tablets, 768px onwards) */
+@media (min-width: 768px) {
+  .newsletter-card {
+    flex-direction: row;
+    min-height: 500px;
+  }
+  
+  /* Restricts big image panel component ratio footprint precisely to 38% */
+  .newsletter-card__visual {
+    width: 38%;
+    height: auto;
+    min-height: 100%;
+  }
+  
+  .newsletter-card__visual img {
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+  
+  .newsletter-card__visual-overlay {
+    background: linear-gradient(to right, transparent 40%, rgba(30, 58, 52, 0.4));
+  }
+  
+  .newsletter-card__badge {
+    bottom: auto;
+    top: 1.75rem;
+    left: 1.75rem;
+  }
+  
+  .newsletter-card__body {
+    width: 62%;
+    padding: 3.5rem 3rem;
+  }
+  
+  /* Shifts registration fields into an elegant inline layout row */
+  .newsletter-form {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .newsletter-form__field {
+    flex-grow: 1;
+  }
+  
+  .newsletter-btn {
+    padding: 0 2rem;
+  }
+}
+
+/* Large Screens System Configuration (Desktops, 1024px onwards) */
+@media (min-width: 1024px) {
+  .newsletter-card__body {
+    padding: 4.5rem;
+  }
+}
+
+/* ==========================================================================
+   PRODUCTION-READY MULTI-COLUMN FOOTER SYSTEM
+   ========================================================================== */
+
+/* Layout Reset & Structural Box Scoping */
+.footer {
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  background-color: #1e3a34; /* Deep Alpine Green Backdrop */
+  color: #ffffff;
+  padding: 5rem 1.5rem 2.5rem;
+  border-top: 5px solid #8c6239; /* Warm Walnut Wood Accent Border Top */
+  -webkit-font-smoothing: antialiased;
+}
+
+.footer *,
+.footer *::before,
+.footer *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Main Grid Container Arrangement */
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr; /* Stacked layout by default for mobile viewports */
+  gap: 3.5rem 2rem;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Brand Identity Column Configuration */
+.footer__col--brand {
+  gap: 1.25rem;
+}
+
+.footer__brand {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.footer__brand span {
+  color: #8c6239; /* Walnut Brown Brand Accent Pop */
+}
+
+.footer__tagline {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  max-width: 340px;
+  line-height: 1.6;
+}
+
+/* Circular Social Links Alignment */
+.footer__social {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.footer__social-link {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer__social-link svg {
+  display: block;
+}
+
+.footer__social-link:hover {
+  background-color: #8c6239;
+  transform: translateY(-4px);
+  color: #ffffff;
+}
+
+/* Link Columns Structural Typography Headers */
+.footer__heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.footer__heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #8c6239;
+}
+
+/* Vertical Text Lists Directory Navigation Links */
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer__link {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+.footer__link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Local Pakistani Gateway Payment Badges Framework */
+.footer__payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__pay-badge {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  letter-spacing: 0.02em;
+}
+
+/* Mini Contact Utilities Typography Block */
+.footer__contact-mini {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer__contact-mini a {
+  color: rgba(255, 255, 255, 0.65);
+  display: inline-block;
+}
+
+.footer__contact-mini a:hover {
+  color: #8c6239;
+}
+
+/* Deep Base Legal & Copyright Meta Segment Row */
+.footer__bottom {
+  max-width: 1200px;
+  margin: 4.5rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer__legal {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.footer__legal .footer__link {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer__legal .footer__link:hover {
+  color: #ffffff;
+  transform: none; /* Disables slide transformation override on base link hover */
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT MATRIX ADAPTATIONS (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Balanced Multi-Column Split Framework (Tablets, Viewports 768px onwards) */
+@media (min-width: 768px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 2.5rem;
+  }
+  
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* Full Width Elegant 4-Column Directory Grid (Desktops, Viewports 1024px onwards) */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 6rem 2rem 3rem;
+  }
+
+  /* Allocates dynamic column width footprint matching brand narrative and lists space demands */
+  .footer__container {
+    grid-template-columns: 1.6fr 0.9fr 0.9fr 1.1fr;
+    gap: 2rem;
+  }
+}
